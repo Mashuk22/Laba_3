@@ -33,17 +33,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GetFilesDir_OnClick(View view) {
-        File file = getFilesDir();
+        File file = getFilesDir(); //внутренний каталог приложения.
         FillFields(file);
     }
 
     public void GetCacheDir_OnClick(View view) {
-        File file = getCacheDir();
+        File file = getCacheDir(); //внутренний каталог для временных файлов кэша приложения
         FillFields(file);
     }
 
     public void GetExternalFilesDir_OnClick(View view) {
-        File file = getExternalFilesDir("Hi");
+        File file = getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS); //абсолютный путь к каталогу на внешнем устройстве, где приложение может поместить постоянные файлы
         FillFields(file);
     }
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GGetExternalStoragePublicDir_OnClick(View view) {
-        File file = Environment.getExternalStoragePublicDirectory("Hi");
+        File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS); //каталог для размещения файлов определенного типа (пользовательских).
         FillFields(file);
     }
 }
